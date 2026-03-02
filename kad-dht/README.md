@@ -275,6 +275,10 @@ Similarly, `Select()` is a pure function that returns the best record out of 2
 or more candidates. It may use a sequence number, a timestamp, or other
 heuristic of the value to make the decision.
 
+When storing values received via `PUT_VALUE`, implementations MUST store only
+records that are valid and selected as best (e.g., newer) relative to any
+existing local record for the same key.
+
 ### Content provider advertisement and discovery
 
 There are two things at play with regard to provider record (and therefore content)
